@@ -1,0 +1,1501 @@
+{
+  "summary": {
+    "total_trades": 82,
+    "win_rate": 40.2,
+    "total_pnl": 277.11,
+    "final_balance": 1277.11,
+    "max_drawdown": 304.19,
+    "profit_factor": 1.45,
+    "sharpe_ratio": 3.28,
+    "avg_win": 22.05,
+    "avg_loss": -11.12,
+    "best_trade": 25.38,
+    "worst_trade": -12.94,
+    "account_start": 1000.0,
+    "return_pct": 27.7
+  },
+  "trades": [
+    {
+      "date": "2024-07-01",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 1819.76,
+      "sl": 1834.32,
+      "tp": 1790.64,
+      "rr": 2.0,
+      "lot": 0.07,
+      "result": "WIN",
+      "pnl": 20.0,
+      "balance": 1020.0,
+      "rsi": 55.6
+    },
+    {
+      "date": "2024-07-16",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 1813.16,
+      "sl": 1827.67,
+      "tp": 1784.15,
+      "rr": 2.0,
+      "lot": 0.07,
+      "result": "LOSS",
+      "pnl": -10.2,
+      "balance": 1009.8,
+      "rsi": 72.8
+    },
+    {
+      "date": "2024-07-17",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 1821.4,
+      "sl": 1835.97,
+      "tp": 1792.26,
+      "rr": 2.0,
+      "lot": 0.07,
+      "result": "LOSS",
+      "pnl": -10.1,
+      "balance": 999.7,
+      "rsi": 57.6
+    },
+    {
+      "date": "2024-07-18",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 1832.38,
+      "sl": 1847.04,
+      "tp": 1803.06,
+      "rr": 2.0,
+      "lot": 0.07,
+      "result": "LOSS",
+      "pnl": -10.0,
+      "balance": 989.7,
+      "rsi": 59.6
+    },
+    {
+      "date": "2024-08-12",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2005.95,
+      "sl": 2022.0,
+      "tp": 1973.85,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 19.8,
+      "balance": 1009.5,
+      "rsi": 61.7
+    },
+    {
+      "date": "2024-08-16",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 1965.12,
+      "sl": 1949.4,
+      "tp": 1996.56,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 20.2,
+      "balance": 1029.7,
+      "rsi": 37.6
+    },
+    {
+      "date": "2024-08-30",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2012.66,
+      "sl": 2028.76,
+      "tp": 1980.46,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 20.6,
+      "balance": 1050.3,
+      "rsi": 47.8
+    },
+    {
+      "date": "2024-09-04",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 1980.23,
+      "sl": 1964.39,
+      "tp": 2011.91,
+      "rr": 2.0,
+      "lot": 0.07,
+      "result": "LOSS",
+      "pnl": -10.5,
+      "balance": 1039.8,
+      "rsi": 35.5
+    },
+    {
+      "date": "2024-09-05",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 1981.96,
+      "sl": 1966.1,
+      "tp": 2013.67,
+      "rr": 2.0,
+      "lot": 0.07,
+      "result": "LOSS",
+      "pnl": -10.4,
+      "balance": 1029.4,
+      "rsi": 38.1
+    },
+    {
+      "date": "2024-10-03",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2022.86,
+      "sl": 2006.68,
+      "tp": 2055.23,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 20.58,
+      "balance": 1049.98,
+      "rsi": 42.2
+    },
+    {
+      "date": "2024-10-15",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2093.44,
+      "sl": 2110.19,
+      "tp": 2059.94,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.5,
+      "balance": 1039.48,
+      "rsi": 68.6
+    },
+    {
+      "date": "2024-10-16",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2120.02,
+      "sl": 2136.98,
+      "tp": 2086.1,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.39,
+      "balance": 1029.09,
+      "rsi": 58.0
+    },
+    {
+      "date": "2024-10-17",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2130.08,
+      "sl": 2147.12,
+      "tp": 2096.0,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.29,
+      "balance": 1018.8,
+      "rsi": 71.8
+    },
+    {
+      "date": "2024-10-25",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2177.06,
+      "sl": 2194.48,
+      "tp": 2142.23,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.19,
+      "balance": 1008.61,
+      "rsi": 68.8
+    },
+    {
+      "date": "2024-11-08",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2228.15,
+      "sl": 2245.98,
+      "tp": 2192.5,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 20.18,
+      "balance": 1028.79,
+      "rsi": 56.4
+    },
+    {
+      "date": "2024-11-12",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2198.28,
+      "sl": 2180.69,
+      "tp": 2233.45,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.29,
+      "balance": 1018.5,
+      "rsi": 34.2
+    },
+    {
+      "date": "2024-11-28",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2253.91,
+      "sl": 2271.94,
+      "tp": 2217.85,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 20.38,
+      "balance": 1038.88,
+      "rsi": 55.8
+    },
+    {
+      "date": "2024-12-13",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2153.64,
+      "sl": 2136.41,
+      "tp": 2188.1,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.39,
+      "balance": 1028.49,
+      "rsi": 35.3
+    },
+    {
+      "date": "2024-12-16",
+      "signal": "BUY",
+      "confidence": 87,
+      "entry": 2136.01,
+      "sl": 2118.92,
+      "tp": 2170.19,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.28,
+      "balance": 1018.21,
+      "rsi": 29.7
+    },
+    {
+      "date": "2024-12-24",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2201.24,
+      "sl": 2218.85,
+      "tp": 2166.02,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 20.36,
+      "balance": 1038.57,
+      "rsi": 62.2
+    },
+    {
+      "date": "2025-01-02",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2201.57,
+      "sl": 2219.18,
+      "tp": 2166.34,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 20.78,
+      "balance": 1059.35,
+      "rsi": 63.7
+    },
+    {
+      "date": "2025-01-13",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2203.86,
+      "sl": 2221.49,
+      "tp": 2168.6,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.59,
+      "balance": 1048.76,
+      "rsi": 59.6
+    },
+    {
+      "date": "2025-01-15",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2195.16,
+      "sl": 2177.6,
+      "tp": 2230.28,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.49,
+      "balance": 1038.27,
+      "rsi": 44.6
+    },
+    {
+      "date": "2025-02-06",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2194.56,
+      "sl": 2177.0,
+      "tp": 2229.67,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.38,
+      "balance": 1027.89,
+      "rsi": 47.7
+    },
+    {
+      "date": "2025-02-12",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2201.35,
+      "sl": 2218.96,
+      "tp": 2166.13,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 20.56,
+      "balance": 1048.45,
+      "rsi": 65.9
+    },
+    {
+      "date": "2025-02-20",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2146.74,
+      "sl": 2129.57,
+      "tp": 2181.09,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 20.96,
+      "balance": 1069.41,
+      "rsi": 30.4
+    },
+    {
+      "date": "2025-03-03",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2146.1,
+      "sl": 2128.93,
+      "tp": 2180.44,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 21.38,
+      "balance": 1090.79,
+      "rsi": 30.7
+    },
+    {
+      "date": "2025-03-04",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2163.79,
+      "sl": 2146.48,
+      "tp": 2198.41,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 21.82,
+      "balance": 1112.61,
+      "rsi": 52.1
+    },
+    {
+      "date": "2025-03-10",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2262.79,
+      "sl": 2280.89,
+      "tp": 2226.59,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -11.13,
+      "balance": 1101.48,
+      "rsi": 75.3
+    },
+    {
+      "date": "2025-03-14",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2306.4,
+      "sl": 2324.85,
+      "tp": 2269.5,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -11.01,
+      "balance": 1090.47,
+      "rsi": 56.4
+    },
+    {
+      "date": "2025-03-31",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2372.92,
+      "sl": 2391.9,
+      "tp": 2334.95,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.9,
+      "balance": 1079.57,
+      "rsi": 73.6
+    },
+    {
+      "date": "2025-04-09",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2365.09,
+      "sl": 2346.17,
+      "tp": 2402.93,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 21.6,
+      "balance": 1101.17,
+      "rsi": 45.8
+    },
+    {
+      "date": "2025-04-28",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2423.66,
+      "sl": 2443.05,
+      "tp": 2384.88,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -11.01,
+      "balance": 1090.16,
+      "rsi": 52.3
+    },
+    {
+      "date": "2025-05-02",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2433.62,
+      "sl": 2453.09,
+      "tp": 2394.68,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 21.8,
+      "balance": 1111.96,
+      "rsi": 47.2
+    },
+    {
+      "date": "2025-05-06",
+      "signal": "BUY",
+      "confidence": 90,
+      "entry": 2406.96,
+      "sl": 2387.7,
+      "tp": 2445.47,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -11.12,
+      "balance": 1100.84,
+      "rsi": 27.2
+    },
+    {
+      "date": "2025-05-15",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2440.72,
+      "sl": 2460.25,
+      "tp": 2401.67,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -11.01,
+      "balance": 1089.83,
+      "rsi": 45.3
+    },
+    {
+      "date": "2025-05-16",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2458.79,
+      "sl": 2478.46,
+      "tp": 2419.45,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.9,
+      "balance": 1078.93,
+      "rsi": 58.0
+    },
+    {
+      "date": "2025-05-28",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2436.67,
+      "sl": 2417.18,
+      "tp": 2475.66,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -10.79,
+      "balance": 1068.14,
+      "rsi": 39.9
+    },
+    {
+      "date": "2025-05-29",
+      "signal": "BUY",
+      "confidence": 87,
+      "entry": 2440.38,
+      "sl": 2420.86,
+      "tp": 2479.43,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "LOSS",
+      "pnl": -10.68,
+      "balance": 1057.46,
+      "rsi": 40.0
+    },
+    {
+      "date": "2025-06-06",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2427.08,
+      "sl": 2407.66,
+      "tp": 2465.91,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "WIN",
+      "pnl": 21.14,
+      "balance": 1078.6,
+      "rsi": 50.2
+    },
+    {
+      "date": "2025-06-11",
+      "signal": "SELL",
+      "confidence": 90,
+      "entry": 2467.92,
+      "sl": 2487.66,
+      "tp": 2428.43,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "LOSS",
+      "pnl": -10.79,
+      "balance": 1067.81,
+      "rsi": 73.7
+    },
+    {
+      "date": "2025-06-12",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2464.22,
+      "sl": 2483.93,
+      "tp": 2424.79,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "LOSS",
+      "pnl": -10.68,
+      "balance": 1057.13,
+      "rsi": 49.7
+    },
+    {
+      "date": "2025-06-25",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2581.92,
+      "sl": 2602.58,
+      "tp": 2540.61,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "LOSS",
+      "pnl": -10.57,
+      "balance": 1046.56,
+      "rsi": 67.0
+    },
+    {
+      "date": "2025-07-03",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2630.4,
+      "sl": 2651.44,
+      "tp": 2588.31,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "WIN",
+      "pnl": 20.94,
+      "balance": 1067.5,
+      "rsi": 54.9
+    },
+    {
+      "date": "2025-07-21",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2618.49,
+      "sl": 2597.54,
+      "tp": 2660.39,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "WIN",
+      "pnl": 21.36,
+      "balance": 1088.86,
+      "rsi": 25.5
+    },
+    {
+      "date": "2025-07-22",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2619.57,
+      "sl": 2598.61,
+      "tp": 2661.48,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "WIN",
+      "pnl": 21.78,
+      "balance": 1110.64,
+      "rsi": 42.1
+    },
+    {
+      "date": "2025-07-29",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2677.7,
+      "sl": 2699.12,
+      "tp": 2634.86,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "LOSS",
+      "pnl": -11.11,
+      "balance": 1099.53,
+      "rsi": 61.9
+    },
+    {
+      "date": "2025-08-06",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2692.97,
+      "sl": 2714.51,
+      "tp": 2649.88,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "LOSS",
+      "pnl": -11.0,
+      "balance": 1088.53,
+      "rsi": 56.8
+    },
+    {
+      "date": "2025-08-15",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2791.93,
+      "sl": 2814.27,
+      "tp": 2747.26,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "TIMEOUT",
+      "pnl": 21.57,
+      "balance": 1110.1,
+      "rsi": 66.1
+    },
+    {
+      "date": "2025-08-18",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2793.65,
+      "sl": 2816.0,
+      "tp": 2748.95,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "WIN",
+      "pnl": 22.2,
+      "balance": 1132.3,
+      "rsi": 56.1
+    },
+    {
+      "date": "2025-08-21",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2782.5,
+      "sl": 2760.24,
+      "tp": 2827.02,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "LOSS",
+      "pnl": -11.32,
+      "balance": 1120.98,
+      "rsi": 38.9
+    },
+    {
+      "date": "2025-09-05",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2762.39,
+      "sl": 2740.29,
+      "tp": 2806.59,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "LOSS",
+      "pnl": -11.21,
+      "balance": 1109.77,
+      "rsi": 32.1
+    },
+    {
+      "date": "2025-09-08",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2748.47,
+      "sl": 2726.48,
+      "tp": 2792.45,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "LOSS",
+      "pnl": -11.1,
+      "balance": 1098.67,
+      "rsi": 39.2
+    },
+    {
+      "date": "2025-09-22",
+      "signal": "BUY",
+      "confidence": 87,
+      "entry": 2715.47,
+      "sl": 2693.75,
+      "tp": 2758.92,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "WIN",
+      "pnl": 21.98,
+      "balance": 1120.65,
+      "rsi": 44.7
+    },
+    {
+      "date": "2025-10-15",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2782.42,
+      "sl": 2804.68,
+      "tp": 2737.9,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "WIN",
+      "pnl": 22.42,
+      "balance": 1143.07,
+      "rsi": 62.8
+    },
+    {
+      "date": "2025-10-22",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2791.18,
+      "sl": 2813.51,
+      "tp": 2746.52,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "WIN",
+      "pnl": 22.86,
+      "balance": 1165.93,
+      "rsi": 46.9
+    },
+    {
+      "date": "2025-10-30",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2733.82,
+      "sl": 2711.95,
+      "tp": 2777.56,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "LOSS",
+      "pnl": -11.66,
+      "balance": 1154.27,
+      "rsi": 42.7
+    },
+    {
+      "date": "2025-11-13",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2778.78,
+      "sl": 2801.01,
+      "tp": 2734.32,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "TIMEOUT",
+      "pnl": 19.41,
+      "balance": 1173.68,
+      "rsi": 64.9
+    },
+    {
+      "date": "2025-11-19",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2793.5,
+      "sl": 2815.85,
+      "tp": 2748.8,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "WIN",
+      "pnl": 23.48,
+      "balance": 1197.16,
+      "rsi": 57.1
+    },
+    {
+      "date": "2025-12-03",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2784.41,
+      "sl": 2762.13,
+      "tp": 2828.96,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "LOSS",
+      "pnl": -11.97,
+      "balance": 1185.19,
+      "rsi": 43.3
+    },
+    {
+      "date": "2025-12-15",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2798.13,
+      "sl": 2820.52,
+      "tp": 2753.36,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "WIN",
+      "pnl": 23.7,
+      "balance": 1208.89,
+      "rsi": 60.0
+    },
+    {
+      "date": "2025-12-29",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2739.15,
+      "sl": 2761.06,
+      "tp": 2695.32,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -12.09,
+      "balance": 1196.8,
+      "rsi": 56.2
+    },
+    {
+      "date": "2026-01-13",
+      "signal": "BUY",
+      "confidence": 87,
+      "entry": 2687.82,
+      "sl": 2666.32,
+      "tp": 2730.83,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -11.97,
+      "balance": 1184.83,
+      "rsi": 34.6
+    },
+    {
+      "date": "2026-01-15",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2650.36,
+      "sl": 2629.16,
+      "tp": 2692.77,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -11.85,
+      "balance": 1172.98,
+      "rsi": 36.8
+    },
+    {
+      "date": "2026-01-29",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2653.71,
+      "sl": 2674.94,
+      "tp": 2611.25,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 23.46,
+      "balance": 1196.44,
+      "rsi": 58.1
+    },
+    {
+      "date": "2026-02-02",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2610.27,
+      "sl": 2589.39,
+      "tp": 2652.03,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 23.92,
+      "balance": 1220.36,
+      "rsi": 27.6
+    },
+    {
+      "date": "2026-02-03",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2595.36,
+      "sl": 2574.6,
+      "tp": 2636.89,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 24.4,
+      "balance": 1244.76,
+      "rsi": 37.1
+    },
+    {
+      "date": "2026-02-09",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2629.88,
+      "sl": 2650.92,
+      "tp": 2587.8,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -12.45,
+      "balance": 1232.31,
+      "rsi": 63.0
+    },
+    {
+      "date": "2026-02-10",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2641.64,
+      "sl": 2662.77,
+      "tp": 2599.37,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -12.32,
+      "balance": 1219.99,
+      "rsi": 60.7
+    },
+    {
+      "date": "2026-02-11",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2650.59,
+      "sl": 2671.79,
+      "tp": 2608.18,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -12.2,
+      "balance": 1207.79,
+      "rsi": 59.1
+    },
+    {
+      "date": "2026-02-20",
+      "signal": "BUY",
+      "confidence": 87,
+      "entry": 2600.46,
+      "sl": 2579.66,
+      "tp": 2642.07,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 24.16,
+      "balance": 1231.95,
+      "rsi": 32.6
+    },
+    {
+      "date": "2026-03-04",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2696.38,
+      "sl": 2717.95,
+      "tp": 2653.24,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -12.32,
+      "balance": 1219.63,
+      "rsi": 71.9
+    },
+    {
+      "date": "2026-03-13",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2748.22,
+      "sl": 2770.21,
+      "tp": 2704.25,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -12.2,
+      "balance": 1207.43,
+      "rsi": 65.3
+    },
+    {
+      "date": "2026-03-24",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2779.63,
+      "sl": 2801.87,
+      "tp": 2735.16,
+      "rr": 2.0,
+      "lot": 0.05,
+      "result": "WIN",
+      "pnl": 24.14,
+      "balance": 1231.57,
+      "rsi": 65.9
+    },
+    {
+      "date": "2026-03-30",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2712.07,
+      "sl": 2690.37,
+      "tp": 2755.46,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -12.32,
+      "balance": 1219.25,
+      "rsi": 44.4
+    },
+    {
+      "date": "2026-03-31",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2687.65,
+      "sl": 2666.15,
+      "tp": 2730.65,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 24.38,
+      "balance": 1243.63,
+      "rsi": 38.8
+    },
+    {
+      "date": "2026-04-06",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2718.27,
+      "sl": 2740.02,
+      "tp": 2674.78,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 24.88,
+      "balance": 1268.51,
+      "rsi": 60.1
+    },
+    {
+      "date": "2026-04-09",
+      "signal": "BUY",
+      "confidence": 79,
+      "entry": 2675.87,
+      "sl": 2654.46,
+      "tp": 2718.68,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "WIN",
+      "pnl": 25.38,
+      "balance": 1293.89,
+      "rsi": 39.0
+    },
+    {
+      "date": "2026-04-16",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2701.97,
+      "sl": 2723.59,
+      "tp": 2658.74,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -12.94,
+      "balance": 1280.95,
+      "rsi": 60.6
+    },
+    {
+      "date": "2026-04-23",
+      "signal": "SELL",
+      "confidence": 87,
+      "entry": 2772.0,
+      "sl": 2794.18,
+      "tp": 2727.65,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "LOSS",
+      "pnl": -12.81,
+      "balance": 1268.14,
+      "rsi": 68.4
+    },
+    {
+      "date": "2026-05-01",
+      "signal": "SELL",
+      "confidence": 79,
+      "entry": 2789.9,
+      "sl": 2812.22,
+      "tp": 2745.26,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "TIMEOUT",
+      "pnl": -5.74,
+      "balance": 1262.4,
+      "rsi": 56.0
+    },
+    {
+      "date": "2026-05-07",
+      "signal": "BUY",
+      "confidence": 87,
+      "entry": 2774.13,
+      "sl": 2751.94,
+      "tp": 2818.52,
+      "rr": 2.0,
+      "lot": 0.06,
+      "result": "TIMEOUT",
+      "pnl": 14.71,
+      "balance": 1277.11,
+      "rsi": 37.2
+    }
+  ],
+  "equity_curve": [
+    {
+      "date": "2024-06-07",
+      "balance": 1000.0
+    },
+    {
+      "date": "2024-07-01",
+      "balance": 1020.0
+    },
+    {
+      "date": "2024-07-16",
+      "balance": 1009.8
+    },
+    {
+      "date": "2024-07-17",
+      "balance": 999.7
+    },
+    {
+      "date": "2024-07-18",
+      "balance": 989.7
+    },
+    {
+      "date": "2024-08-12",
+      "balance": 1009.5
+    },
+    {
+      "date": "2024-08-16",
+      "balance": 1029.7
+    },
+    {
+      "date": "2024-08-30",
+      "balance": 1050.3
+    },
+    {
+      "date": "2024-09-04",
+      "balance": 1039.8
+    },
+    {
+      "date": "2024-09-05",
+      "balance": 1029.4
+    },
+    {
+      "date": "2024-10-03",
+      "balance": 1049.98
+    },
+    {
+      "date": "2024-10-15",
+      "balance": 1039.48
+    },
+    {
+      "date": "2024-10-16",
+      "balance": 1029.09
+    },
+    {
+      "date": "2024-10-17",
+      "balance": 1018.8
+    },
+    {
+      "date": "2024-10-25",
+      "balance": 1008.61
+    },
+    {
+      "date": "2024-11-08",
+      "balance": 1028.79
+    },
+    {
+      "date": "2024-11-12",
+      "balance": 1018.5
+    },
+    {
+      "date": "2024-11-28",
+      "balance": 1038.88
+    },
+    {
+      "date": "2024-12-13",
+      "balance": 1028.49
+    },
+    {
+      "date": "2024-12-16",
+      "balance": 1018.21
+    },
+    {
+      "date": "2024-12-24",
+      "balance": 1038.57
+    },
+    {
+      "date": "2025-01-02",
+      "balance": 1059.35
+    },
+    {
+      "date": "2025-01-13",
+      "balance": 1048.76
+    },
+    {
+      "date": "2025-01-15",
+      "balance": 1038.27
+    },
+    {
+      "date": "2025-02-06",
+      "balance": 1027.89
+    },
+    {
+      "date": "2025-02-12",
+      "balance": 1048.45
+    },
+    {
+      "date": "2025-02-20",
+      "balance": 1069.41
+    },
+    {
+      "date": "2025-03-03",
+      "balance": 1090.79
+    },
+    {
+      "date": "2025-03-04",
+      "balance": 1112.61
+    },
+    {
+      "date": "2025-03-10",
+      "balance": 1101.48
+    },
+    {
+      "date": "2025-03-14",
+      "balance": 1090.47
+    },
+    {
+      "date": "2025-03-31",
+      "balance": 1079.57
+    },
+    {
+      "date": "2025-04-09",
+      "balance": 1101.17
+    },
+    {
+      "date": "2025-04-28",
+      "balance": 1090.16
+    },
+    {
+      "date": "2025-05-02",
+      "balance": 1111.96
+    },
+    {
+      "date": "2025-05-06",
+      "balance": 1100.84
+    },
+    {
+      "date": "2025-05-15",
+      "balance": 1089.83
+    },
+    {
+      "date": "2025-05-16",
+      "balance": 1078.93
+    },
+    {
+      "date": "2025-05-28",
+      "balance": 1068.14
+    },
+    {
+      "date": "2025-05-29",
+      "balance": 1057.46
+    },
+    {
+      "date": "2025-06-06",
+      "balance": 1078.6
+    },
+    {
+      "date": "2025-06-11",
+      "balance": 1067.81
+    },
+    {
+      "date": "2025-06-12",
+      "balance": 1057.13
+    },
+    {
+      "date": "2025-06-25",
+      "balance": 1046.56
+    },
+    {
+      "date": "2025-07-03",
+      "balance": 1067.5
+    },
+    {
+      "date": "2025-07-21",
+      "balance": 1088.86
+    },
+    {
+      "date": "2025-07-22",
+      "balance": 1110.64
+    },
+    {
+      "date": "2025-07-29",
+      "balance": 1099.53
+    },
+    {
+      "date": "2025-08-06",
+      "balance": 1088.53
+    },
+    {
+      "date": "2025-08-15",
+      "balance": 1110.1
+    },
+    {
+      "date": "2025-08-18",
+      "balance": 1132.3
+    },
+    {
+      "date": "2025-08-21",
+      "balance": 1120.98
+    },
+    {
+      "date": "2025-09-05",
+      "balance": 1109.77
+    },
+    {
+      "date": "2025-09-08",
+      "balance": 1098.67
+    },
+    {
+      "date": "2025-09-22",
+      "balance": 1120.65
+    },
+    {
+      "date": "2025-10-15",
+      "balance": 1143.07
+    },
+    {
+      "date": "2025-10-22",
+      "balance": 1165.93
+    },
+    {
+      "date": "2025-10-30",
+      "balance": 1154.27
+    },
+    {
+      "date": "2025-11-13",
+      "balance": 1173.68
+    },
+    {
+      "date": "2025-11-19",
+      "balance": 1197.16
+    },
+    {
+      "date": "2025-12-03",
+      "balance": 1185.19
+    },
+    {
+      "date": "2025-12-15",
+      "balance": 1208.89
+    },
+    {
+      "date": "2025-12-29",
+      "balance": 1196.8
+    },
+    {
+      "date": "2026-01-13",
+      "balance": 1184.83
+    },
+    {
+      "date": "2026-01-15",
+      "balance": 1172.98
+    },
+    {
+      "date": "2026-01-29",
+      "balance": 1196.44
+    },
+    {
+      "date": "2026-02-02",
+      "balance": 1220.36
+    },
+    {
+      "date": "2026-02-03",
+      "balance": 1244.76
+    },
+    {
+      "date": "2026-02-09",
+      "balance": 1232.31
+    },
+    {
+      "date": "2026-02-10",
+      "balance": 1219.99
+    },
+    {
+      "date": "2026-02-11",
+      "balance": 1207.79
+    },
+    {
+      "date": "2026-02-20",
+      "balance": 1231.95
+    },
+    {
+      "date": "2026-03-04",
+      "balance": 1219.63
+    },
+    {
+      "date": "2026-03-13",
+      "balance": 1207.43
+    },
+    {
+      "date": "2026-03-24",
+      "balance": 1231.57
+    },
+    {
+      "date": "2026-03-30",
+      "balance": 1219.25
+    },
+    {
+      "date": "2026-03-31",
+      "balance": 1243.63
+    },
+    {
+      "date": "2026-04-06",
+      "balance": 1268.51
+    },
+    {
+      "date": "2026-04-09",
+      "balance": 1293.89
+    },
+    {
+      "date": "2026-04-16",
+      "balance": 1280.95
+    },
+    {
+      "date": "2026-04-23",
+      "balance": 1268.14
+    },
+    {
+      "date": "2026-05-01",
+      "balance": 1262.4
+    },
+    {
+      "date": "2026-05-07",
+      "balance": 1277.11
+    }
+  ]
+}
