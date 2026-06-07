@@ -1,0 +1,102 @@
+[
+  {
+    "instrument": "XAUUSD",
+    "signal": "SELL",
+    "confidence": 78,
+    "entry": 3377.78,
+    "sl": 3405.0,
+    "tp": 3320.0,
+    "lot_size": 0.04,
+    "executed": true,
+    "rejection_reasons": [],
+    "mode": "paper",
+    "total_tokens": 1561,
+    "timestamp": "2026-06-07T12:35:55.661375"
+  },
+  {
+    "instrument": "XAUUSD",
+    "signal": "BUY",
+    "confidence": 58,
+    "entry": 3218.48,
+    "sl": 3190.0,
+    "tp": 3270.0,
+    "lot_size": 0,
+    "executed": false,
+    "rejection_reasons": [
+      "Confidence 58% < minimum 60%",
+      "R:R ratio 1.81 < minimum 2.0"
+    ],
+    "mode": "paper",
+    "total_tokens": 752,
+    "timestamp": "2026-06-07T12:36:03.838388"
+  },
+  {
+    "instrument": "XAUUSD",
+    "signal": "SELL",
+    "confidence": 78,
+    "entry": 3377.78,
+    "sl": 3402.0,
+    "tp": 3320.0,
+    "lot_size": 0,
+    "executed": false,
+    "rejection_reasons": [
+      "High-impact news within 30 minutes \u2014 no entry"
+    ],
+    "mode": "paper",
+    "total_tokens": 767,
+    "timestamp": "2026-06-07T12:36:11.296522"
+  },
+  {
+    "instrument": "XAUUSD",
+    "signal": "SELL",
+    "confidence": 65,
+    "entry": 3377.78,
+    "sl": 3398.0,
+    "tp": 3330.0,
+    "lot_size": 0.05,
+    "executed": false,
+    "rejection_reasons": [],
+    "macro_signal": "neutral_to_cautiously_bullish_gold",
+    "news_bias": "neutral",
+    "mode": "paper",
+    "total_tokens": 101718,
+    "timestamp": "2026-06-07T13:51:01.544792"
+  },
+  {
+    "instrument": "XAUUSD",
+    "signal": "SELL",
+    "confidence": 68,
+    "entry": 3377.78,
+    "entry_zone": "3370.00 \u2013 3385.00",
+    "sl": 3398.0,
+    "tp": 3320.0,
+    "lot_size": 0.05,
+    "executed": false,
+    "rejection_reasons": [],
+    "macro_signal": "mixed_with_gold_supported",
+    "news_bias": "neutral",
+    "bull_points": [
+      "MACD remains bullish with no bearish crossover yet, suggesting underlying momentum has not reversed",
+      "Macro environment shows rising inflation, which historically supports gold as a store of value",
+      "Central bank gold demand remains strong, providing a structural floor under prices",
+      "No upcoming or breaking high-impact news events that could trigger a sharp sell-off",
+      "Real yields are broadly flat year-over-year (-0.02pts), limiting the structural headwind from that vector",
+      "Geopolitical risk premium (Iran, broader macro uncertainty) has not fully unwound, maintaining some safe-haven bid"
+    ],
+    "bear_points": [
+      "RSI at 88.25 represents extreme overbought territory \u2014 a strong bear signal per standing rules, rarely sustained without correction",
+      "Technical analyst rates signal as SELL with 78% confidence and strong strength rating",
+      "USD bias is stable-to-firming and DXY holding above 100 historically caps gold upside",
+      "Fed stance is hawkish-lean with on-hold posture; rising short-term real yields (up 0.24pts past month, now at 2.17%) are a direct headwind for non-yielding gold",
+      "Macro signal confidence is only 52% \u2014 mixed, not firmly bullish \u2014 meaning macro is not a reliable offset to the technical sell signal",
+      "Iran ceasefire risk could rapidly dissolve the geopolitical safe-haven premium baked into current price",
+      "No defined support levels identified by the technical analyst, increasing downside uncertainty if selling accelerates",
+      "Price at 3377.78 with a conservative take-profit of 3320 suggests meaningful downside room (~57 pts) vs tight stop of ~20 pts above"
+    ],
+    "time_horizon": "intraday",
+    "invalidation": "3398.00 (stop-loss level; a close above signals overbought conditions are being sustained and the setup is invalid)",
+    "mode": "paper",
+    "total_tokens": 102573,
+    "timestamp": "2026-06-07T14:12:35.091806"
+  }
+]

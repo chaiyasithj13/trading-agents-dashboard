@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0c0f">
+<title>AI Trading Dashboard</title>
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{--bg:#0a0c0f;--surface:#111318;--border:#1e2229;--gold:#f5c842;--green:#22c55e;--red:#ef4444;--blue:#3b82f6;--amber:#f59e0b;--muted:#4b5563;--text:#e5e7eb;--text-dim:#6b7280;--mono:'DM Mono',monospace;--display:'Syne',sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--display);min-height:100vh;padding:16px}
+  .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-icon{width:32px;height:32px;background:var(--gold);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+  .logo-text{font-size:16px;font-weight:700}
+  .logo-sub{font-size:10px;color:var(--text-dim);font-family:var(--mono);margin-top:1px}
+  .mode-badge{background:#1a1f0a;border:1px solid #3a4a10;color:#a3e635;font-size:10px;font-family:var(--mono);padding:3px 8px;border-radius:4px;white-space:nowrap}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+  .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+  .stat-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .stat-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px}
+  .stat-badge{font-size:10px;font-family:var(--mono);padding:1px 6px;border-radius:99px}
+  .stat-num{font-size:30px;font-weight:500;font-family:var(--mono);line-height:1;margin-bottom:3px}
+  .stat-label{font-size:10px;color:var(--text-dim);font-family:var(--mono)}
+  .stat-divider{height:1px;background:var(--border);margin:8px 0}
+  .stat-foot{font-size:10px;color:var(--muted);font-family:var(--mono)}
+  .panel{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px}
+  .panel-title{font-size:10px;font-family:var(--mono);color:var(--text-dim);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+  .trade-item{padding:10px 0;border-bottom:1px solid var(--border)}
+  .trade-item:last-child{border-bottom:none;padding-bottom:0}
+  .trade-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+  .trade-time{font-size:11px;color:var(--text-dim);font-family:var(--mono)}
+  .signal-buy{color:var(--green);font-weight:500;font-size:13px;font-family:var(--mono)}
+  .signal-sell{color:var(--red);font-weight:500;font-size:13px;font-family:var(--mono)}
+  .pill{font-size:10px;padding:2px 7px;border-radius:3px;font-family:var(--mono)}
+  .pill-exec{background:#052e16;color:var(--green);border:1px solid #166534}
+  .pill-rej{background:#1f0707;color:#f87171;border:1px solid #7f1d1d}
+  .trade-details{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:10px;font-family:var(--mono);color:var(--text-dim)}
+  .trade-details span{display:flex;flex-direction:column;gap:1px}
+  .trade-details b{color:var(--text);font-weight:500}
+  .conf-bar{height:2px;border-radius:1px;background:var(--border);margin-top:6px}
+  .conf-fill{height:100%;border-radius:1px;background:var(--gold)}
+  .rej-reason{font-size:10px;color:#f87171;background:#1f0707;padding:4px 8px;border-radius:3px;margin-top:6px;font-family:var(--mono)}
+  .chart-wrap{height:160px;margin-top:4px}
+  .debate-item{display:flex;gap:8px;align-items:flex-start;padding:5px 0;font-size:11px;font-family:var(--mono);border-bottom:1px solid var(--border)}
+  .debate-item:last-child{border-bottom:none}
+  .dot{width:5px;height:5px;border-radius:50%;margin-top:4px;flex-shrink:0}
+  .last-update{font-size:10px;color:var(--muted);font-family:var(--mono);text-align:center;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+  .loading{text-align:center;padding:40px;color:var(--text-dim);font-family:var(--mono);font-size:12px}
+  .error{text-align:center;padding:20px;color:#f87171;font-family:var(--mono);font-size:11px;background:#1f0707;border-radius:8px;margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">
+    <div class="logo-icon">⚡</div>
+    <div>
+      <div class="logo-text">AI Trading</div>
+      <div class="logo-sub">XAUUSD · phase 4 · eightcap</div>
+    </div>
+  </div>
+  <span class="mode-badge" id="mode-badge">● PAPER</span>
+</div>
+
+<div id="error-box" style="display:none" class="error"></div>
+<div id="loading" class="loading">loading trades...</div>
+<div id="content" style="display:none">
+  <div class="stats-grid" id="stats-grid"></div>
+  <div class="panel">
+    <div class="panel-title">trade log</div>
+    <div id="trade-list"></div>
+  </div>
+  <div class="panel">
+    <div class="panel-title">confidence per run</div>
+    <div class="chart-wrap"><canvas id="confChart"></canvas></div>
+  </div>
+  <div class="panel">
+    <div class="panel-title">latest debate</div>
+    <div id="debate-list"></div>
+  </div>
+  <div class="last-update" id="last-update"></div>
+</div>
+
+<script>
+async function loadData() {
+  try {
+    const res = await fetch('./paper_trades.json?t=' + Date.now());
+    if (!res.ok) throw new Error('Cannot load paper_trades.json');
+    const trades = await res.json();
+    render(trades);
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  } catch(e) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error-box').style.display = 'block';
+    document.getElementById('error-box').textContent = 'Error: ' + e.message;
+  }
+}
+
+function render(T) {
+  const total = T.length;
+  const exec = T.filter(t => t.executed).length;
+  const rej = total - exec;
+  const avgConf = Math.round(T.reduce((a,t) => a + t.confidence, 0) / total);
+  const totalTok = T.reduce((a,t) => a + (t.total_tokens||0), 0);
+  const sellCount = T.filter(t => t.signal === 'SELL').length;
+  const mode = T[T.length-1]?.mode || 'paper';
+  document.getElementById('mode-badge').textContent = '● ' + mode.toUpperCase();
+
+  const stats = [
+    {icon:'⚡',label:'total runs',value:total,sub:'paper trade',ibg:'#1a1a2e',ic:'#6b7280',bbg:'#1e2229',bc:'#4b5563',badge:'today'},
+    {icon:'✓',label:'executed',value:exec,sub:'passed gate',ibg:'#052e16',ic:'#22c55e',bbg:'#052e16',bc:'#22c55e',badge:Math.round(exec/total*100)+'%',vc:'#22c55e'},
+    {icon:'✕',label:'rejected',value:rej,sub:'filtered',ibg:'#1f0707',ic:'#ef4444',bbg:'#1f0707',bc:'#ef4444',badge:Math.round(rej/total*100)+'%',vc:'#ef4444'},
+    {icon:'~',label:'avg conf',value:avgConf+'%',sub:'all runs',ibg:'#2a1f05',ic:'#f59e0b',bbg:'#2a1f05',bc:'#f59e0b',badge:'avg',vc:'#f59e0b'},
+    {icon:'#',label:'tokens',value:(totalTok/1000).toFixed(0)+'k',sub:'total used',ibg:'#0c1a2e',ic:'#3b82f6',bbg:'#0c1a2e',bc:'#3b82f6',badge:'~$'+(totalTok*0.000003).toFixed(4),vc:'#3b82f6'},
+    {icon:'↓',label:'top signal',value:'SELL',sub:sellCount+'/'+total+' runs',ibg:'#1a1a1a',ic:'#6b7280',bbg:'#1e2229',bc:'#4b5563',badge:sellCount+'/'+total},
+  ];
+
+  document.getElementById('stats-grid').innerHTML = stats.map(s => `
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon" style="background:${s.ibg};color:${s.ic};font-family:var(--mono)">${s.icon}</div>
+        <span class="stat-badge" style="background:${s.bbg};color:${s.bc}">${s.badge}</span>
+      </div>
+      <div class="stat-num" style="${s.vc?'color:'+s.vc:''}">${s.value}</div>
+      <div class="stat-label">${s.label}</div>
+      <div class="stat-divider"></div>
+      <div class="stat-foot">${s.sub}</div>
+    </div>`).join('');
+
+  document.getElementById('trade-list').innerHTML = [...T].reverse().map(t => {
+    const time = t.timestamp ? t.timestamp.slice(11,16) : '—';
+    const date = t.timestamp ? t.timestamp.slice(0,10) : '';
+    return `<div class="trade-item">
+      <div class="trade-top">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="${t.signal==='BUY'?'signal-buy':'signal-sell'}">${t.signal}</span>
+          <span style="font-size:10px;color:var(--text-dim);font-family:var(--mono)">${date} ${time}</span>
+        </div>
+        <span class="pill ${t.executed?'pill-exec':'pill-rej'}">${t.executed?'✓ EXEC':'✗ REJ'}</span>
+      </div>
+      <div class="trade-details">
+        <span>entry<b>${t.entry?.toFixed(2)||'—'}</b></span>
+        <span>SL<b style="color:#ef4444">${t.sl||'—'}</b></span>
+        <span>TP<b style="color:#22c55e">${t.tp||'—'}</b></span>
+      </div>
+      <div class="conf-bar"><div class="conf-fill" style="width:${t.confidence||0}%"></div></div>
+      ${!t.executed && t.rejection_reasons?.length ? `<div class="rej-reason">${t.rejection_reasons[0]}</div>` : ''}
+    </div>`;
+  }).join('');
+
+  if (window._chart) window._chart.destroy();
+  window._chart = new Chart(document.getElementById('confChart'), {
+    type: 'bar',
+    data: {
+      labels: T.map((_,i) => '#'+(i+1)),
+      datasets: [{
+        data: T.map(t => t.confidence),
+        backgroundColor: T.map(t => t.executed ? '#22c55e33' : '#ef444433'),
+        borderColor: T.map(t => t.executed ? '#22c55e' : '#ef4444'),
+        borderWidth: 1, borderRadius: 3
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: '#1e2229' }, ticks: { color: '#4b5563', font: { family: 'DM Mono', size: 10 } } },
+        y: { min: 0, max: 100, grid: { color: '#1e2229' }, ticks: { color: '#4b5563', font: { family: 'DM Mono', size: 10 } } }
+      }
+    }
+  });
+
+  const latest = T[T.length-1];
+  if (latest) {
+    document.getElementById('debate-list').innerHTML = [
+      ...(latest.bull_points||[]).map(p => `<div class="debate-item"><div class="dot" style="background:#22c55e"></div><div style="color:#86efac">${p}</div></div>`),
+      ...(latest.bear_points||[]).map(p => `<div class="debate-item"><div class="dot" style="background:#ef4444"></div><div style="color:#fca5a5">${p}</div></div>`)
+    ].join('') || '<div style="color:var(--text-dim);font-size:11px;font-family:var(--mono)">no debate data</div>';
+  }
+
+  document.getElementById('last-update').textContent = 'last updated: ' + new Date().toLocaleString('th-TH');
+}
+
+loadData();
+// auto refresh ทุก 5 นาที
+setInterval(loadData, 5 * 60 * 1000);
+</script>
+</body>
+</html>
