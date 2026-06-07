@@ -8,17 +8,17 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-:root{--bg:#0a0c0f;--surface:#111318;--border:#1e2229;--gold:#f5c842;--green:#22c55e;--red:#ef4444;--blue:#3b82f6;--amber:#f59e0b;--text:#e5e7eb;--text-dim:#6b7280;--muted:#4b5563;--mono:'DM Mono',monospace;--display:'Syne',sans-serif}
+:root{--bg:#0a0c0f;--surface:#111318;--border:#1e2229;--gold:#f5c842;--green:#22c55e;--red:#ef4444;--blue:#3b82f6;--amber:#f59e0b;--text:#e5e7eb;--dim:#6b7280;--muted:#4b5563;--mono:'DM Mono',monospace;--display:'Syne',sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:var(--display);min-height:100vh;padding:16px}
+body{background:var(--bg);color:var(--text);font-family:var(--display);padding:16px}
 .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
 .logo{display:flex;align-items:center;gap:10px}
 .logo-icon{width:32px;height:32px;background:var(--gold);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
 .logo-text{font-size:16px;font-weight:700}
-.logo-sub{font-size:10px;color:var(--text-dim);font-family:var(--mono);margin-top:1px}
-.badge{background:#1a1f0a;border:1px solid #3a4a10;color:#a3e635;font-size:10px;font-family:var(--mono);padding:3px 8px;border-radius:4px;white-space:nowrap}
+.logo-sub{font-size:10px;color:var(--dim);font-family:var(--mono);margin-top:1px}
+.badge{background:#1a1f0a;border:1px solid #3a4a10;color:#a3e635;font-size:10px;font-family:var(--mono);padding:3px 8px;border-radius:4px}
 .tabs{display:flex;gap:4px;margin-bottom:16px;background:var(--surface);padding:4px;border-radius:10px;border:1px solid var(--border)}
-.tab{flex:1;padding:8px;font-size:12px;font-family:var(--mono);border:none;background:transparent;color:var(--text-dim);cursor:pointer;border-radius:7px;transition:all .2s}
+.tab{flex:1;padding:7px;font-size:11px;font-family:var(--mono);border:none;background:transparent;color:var(--dim);cursor:pointer;border-radius:7px;transition:all .2s}
 .tab.active{background:var(--border);color:var(--text)}
 .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
 .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
@@ -26,42 +26,50 @@ body{background:var(--bg);color:var(--text);font-family:var(--display);min-heigh
 .stat-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px}
 .stat-badge{font-size:10px;font-family:var(--mono);padding:1px 6px;border-radius:99px}
 .stat-num{font-size:28px;font-weight:500;font-family:var(--mono);line-height:1;margin-bottom:3px}
-.stat-label{font-size:10px;color:var(--text-dim);font-family:var(--mono)}
-.stat-divider{height:1px;background:var(--border);margin:8px 0}
+.stat-label{font-size:10px;color:var(--dim);font-family:var(--mono)}
+.stat-div{height:1px;background:var(--border);margin:8px 0}
 .stat-foot{font-size:10px;color:var(--muted);font-family:var(--mono)}
 .panel{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px}
-.panel-title{font-size:10px;font-family:var(--mono);color:var(--text-dim);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+.ptitle{font-size:10px;font-family:var(--mono);color:var(--dim);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
 .trade-item{padding:10px 0;border-bottom:1px solid var(--border)}
 .trade-item:last-child{border-bottom:none;padding-bottom:0}
-.trade-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-.signal-buy{color:var(--green);font-weight:500;font-size:13px;font-family:var(--mono)}
-.signal-sell{color:var(--red);font-weight:500;font-size:13px;font-family:var(--mono)}
+.ttop{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.buy{color:var(--green);font-weight:500;font-size:13px;font-family:var(--mono)}
+.sell{color:var(--red);font-weight:500;font-size:13px;font-family:var(--mono)}
 .pill{font-size:10px;padding:2px 7px;border-radius:3px;font-family:var(--mono)}
-.pill-exec{background:#052e16;color:var(--green);border:1px solid #166534}
-.pill-rej{background:#1f0707;color:#f87171;border:1px solid #7f1d1d}
-.pill-win{background:#052e16;color:var(--green);border:1px solid #166534}
-.pill-loss{background:#1f0707;color:#f87171;border:1px solid #7f1d1d}
-.pill-timeout{background:#1a1f0a;color:#a3e635;border:1px solid #3a4a10}
-.trade-details{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:10px;font-family:var(--mono);color:var(--text-dim)}
-.trade-details span{display:flex;flex-direction:column;gap:1px}
-.trade-details b{color:var(--text);font-weight:500}
-.conf-bar{height:2px;border-radius:1px;background:var(--border);margin-top:6px}
-.conf-fill{height:100%;border-radius:1px;background:var(--gold)}
-.rej-reason{font-size:10px;color:#f87171;background:#1f0707;padding:4px 8px;border-radius:3px;margin-top:6px;font-family:var(--mono)}
-.chart-wrap{height:180px;margin-top:4px}
-.chart-wrap-sm{height:140px;margin-top:4px}
-.debate-item{display:flex;gap:8px;align-items:flex-start;padding:5px 0;font-size:11px;font-family:var(--mono);border-bottom:1px solid var(--border)}
-.debate-item:last-child{border-bottom:none}
+.p-exec{background:#052e16;color:var(--green);border:1px solid #166534}
+.p-rej{background:#1f0707;color:#f87171;border:1px solid #7f1d1d}
+.p-win{background:#052e16;color:var(--green);border:1px solid #166534}
+.p-loss{background:#1f0707;color:#f87171;border:1px solid #7f1d1d}
+.tdet{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:10px;font-family:var(--mono);color:var(--dim)}
+.tdet span{display:flex;flex-direction:column;gap:1px}
+.tdet b{color:var(--text);font-weight:500}
+.cbar{height:2px;border-radius:1px;background:var(--border);margin-top:6px}
+.cfill{height:100%;border-radius:1px;background:var(--gold)}
+.rr{font-size:10px;color:#f87171;background:#1f0707;padding:4px 8px;border-radius:3px;margin-top:6px;font-family:var(--mono)}
+.cw{height:180px;margin-top:4px}
+.cw-sm{height:120px;margin-top:4px}
+.di{display:flex;gap:8px;align-items:flex-start;padding:5px 0;font-size:11px;font-family:var(--mono);border-bottom:1px solid var(--border)}
+.di:last-child{border-bottom:none}
 .dot{width:5px;height:5px;border-radius:50%;margin-top:4px;flex-shrink:0}
-.last-update{font-size:10px;color:var(--muted);font-family:var(--mono);text-align:center;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
-.section-hidden{display:none}
-.bt-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.lu{font-size:10px;color:var(--muted);font-family:var(--mono);text-align:center;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+.hidden{display:none}
 .bt-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;font-family:var(--mono)}
 .bt-row:last-child{border-bottom:none}
-.monthly-bar{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:10px;font-family:var(--mono);border-bottom:1px solid var(--border)}
-.monthly-bar:last-child{border-bottom:none}
-.bar-wrap{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
-.bar-fill{height:100%;border-radius:2px}
+.mbar{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:10px;font-family:var(--mono);border-bottom:1px solid var(--border)}
+.mbar:last-child{border-bottom:none}
+.bw{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.bf{height:100%;border-radius:2px}
+/* instrument selector */
+.inst-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px}
+.inst-btn{padding:6px 4px;font-size:10px;font-family:var(--mono);border:1px solid var(--border);background:var(--surface);color:var(--dim);border-radius:7px;cursor:pointer;text-align:center;transition:all .2s}
+.inst-btn.active{background:var(--border);color:var(--text);border-color:var(--muted)}
+.inst-btn.profit{border-color:#166534}
+.inst-btn.loss{border-color:#7f1d1d}
+/* comparison table */
+.cmp-row{display:grid;grid-template-columns:90px 1fr 60px 60px 55px;gap:6px;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);font-size:11px;font-family:var(--mono)}
+.cmp-row:last-child{border-bottom:none}
+.ret-bar{height:6px;border-radius:3px}
 </style>
 </head>
 <body>
@@ -71,7 +79,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--display);min-heigh
     <div class="logo-icon">⚡</div>
     <div>
       <div class="logo-text">AI Trading</div>
-      <div class="logo-sub">XAUUSD · phase 4 · eightcap</div>
+      <div class="logo-sub">10 instruments · phase 4 · eightcap</div>
     </div>
   </div>
   <span class="badge" id="mode-badge">● PAPER</span>
@@ -82,244 +90,144 @@ body{background:var(--bg);color:var(--text);font-family:var(--display);min-heigh
   <button class="tab" onclick="switchTab('backtest')">Backtest 2Y</button>
 </div>
 
-<!-- LIVE TRADES SECTION -->
+<!-- LIVE -->
 <div id="tab-live">
   <div class="stats-grid" id="live-stats"></div>
-  <div class="panel">
-    <div class="panel-title">trade log</div>
-    <div id="trade-list"></div>
-  </div>
-  <div class="panel">
-    <div class="panel-title">confidence per run</div>
-    <div class="chart-wrap"><canvas id="confChart"></canvas></div>
-  </div>
-  <div class="panel">
-    <div class="panel-title">latest debate</div>
-    <div id="debate-list"></div>
-  </div>
+  <div class="panel"><div class="ptitle">trade log</div><div id="trade-list"></div></div>
+  <div class="panel"><div class="ptitle">confidence per run</div><div class="cw"><canvas id="confChart"></canvas></div></div>
+  <div class="panel"><div class="ptitle">latest debate</div><div id="debate-list"></div></div>
 </div>
 
-<!-- BACKTEST SECTION -->
-<div id="tab-backtest" class="section-hidden">
+<!-- BACKTEST -->
+<div id="tab-backtest" class="hidden">
+
+  <!-- Comparison table -->
+  <div class="panel">
+    <div class="ptitle">ผลเปรียบเทียบทุก instrument — 2 ปี</div>
+    <div class="cmp-row" style="color:var(--dim);font-size:10px;padding-bottom:6px">
+      <div>instrument</div><div>return</div><div style="text-align:right">win%</div><div style="text-align:right">sharpe</div><div style="text-align:right">pnl</div>
+    </div>
+    <div id="cmp-list"></div>
+  </div>
+
+  <!-- Instrument selector -->
+  <div class="panel">
+    <div class="ptitle">ดูรายละเอียดแต่ละ instrument</div>
+    <div class="inst-grid" id="inst-btns"></div>
+  </div>
+
+  <!-- Detail -->
   <div class="stats-grid" id="bt-stats"></div>
-  <div class="bt-grid">
-    <div class="panel" style="margin-bottom:0">
-      <div class="panel-title">performance</div>
-      <div id="bt-perf"></div>
-    </div>
-    <div class="panel" style="margin-bottom:0">
-      <div class="panel-title">risk metrics</div>
-      <div id="bt-risk"></div>
-    </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+    <div class="panel" style="margin-bottom:0"><div class="ptitle">performance</div><div id="bt-perf"></div></div>
+    <div class="panel" style="margin-bottom:0"><div class="ptitle">risk metrics</div><div id="bt-risk"></div></div>
   </div>
-  <div class="panel" style="margin-top:12px">
-    <div class="panel-title">equity curve — 2 years</div>
-    <div class="chart-wrap"><canvas id="equityChart"></canvas></div>
-  </div>
-  <div class="panel">
-    <div class="panel-title">monthly P&L</div>
-    <div id="monthly-list"></div>
-  </div>
-  <div class="panel">
-    <div class="panel-title">backtest trades (last 20)</div>
-    <div id="bt-trades"></div>
-  </div>
+  <div class="panel"><div class="ptitle">equity curve</div><div class="cw"><canvas id="equityChart"></canvas></div></div>
+  <div class="panel"><div class="ptitle">monthly P&L</div><div id="monthly-list"></div></div>
 </div>
 
-<div class="last-update" id="last-update"></div>
+<div class="lu" id="last-update"></div>
 
 <script>
-const BACKTEST = {"summary":{"total_trades":82,"win_rate":40.2,"total_pnl":277.11,"final_balance":1277.11,"max_drawdown":304.19,"profit_factor":1.45,"sharpe_ratio":3.28,"avg_win":22.05,"avg_loss":-11.12,"best_trade":25.38,"worst_trade":-12.94,"account_start":1000.0,"return_pct":27.7},"equity_labels":["06-07","07-01","07-16","07-17","07-18","08-12","08-16","08-30","09-04","09-05","10-03","10-15","10-16","10-17","10-25","11-08","11-12","11-28","12-13","12-16","12-24","01-02","01-13","01-15","02-06","02-12","02-20","03-03","03-04","03-10","03-14","03-31","04-09","04-28","05-02","05-06","05-15","05-16","05-28","05-29","06-06","06-11","06-12","06-25","07-03","07-21","07-22","07-29","08-06","08-15","08-18","08-21","09-05","09-08","09-22","10-15","10-22","10-30","11-13","11-19","12-03","12-15","12-29","01-13","01-15","01-29","02-02","02-03","02-09","02-10","02-11","02-20","03-04","03-13","03-24","03-30","03-31","04-06","04-09","04-16","04-23","05-01","05-07"],"equity_values":[1000.0,1020.0,1009.8,999.7,989.7,1009.5,1029.7,1050.3,1039.8,1029.4,1049.98,1039.48,1029.09,1018.8,1008.61,1028.79,1018.5,1038.88,1028.49,1018.21,1038.57,1059.35,1048.76,1038.27,1027.89,1048.45,1069.41,1090.79,1112.61,1101.48,1090.47,1079.57,1101.17,1090.16,1111.96,1100.84,1089.83,1078.93,1068.14,1057.46,1078.6,1067.81,1057.13,1046.56,1067.5,1088.86,1110.64,1099.53,1088.53,1110.1,1132.3,1120.98,1109.77,1098.67,1120.65,1143.07,1165.93,1154.27,1173.68,1197.16,1185.19,1208.89,1196.8,1184.83,1172.98,1196.44,1220.36,1244.76,1232.31,1219.99,1207.79,1231.95,1219.63,1207.43,1231.57,1219.25,1243.63,1268.51,1293.89,1280.95,1268.14,1262.4,1277.11],"monthly":{"2024-07":{"wins":1,"losses":3,"pnl":-10.3},"2024-08":{"wins":3,"losses":0,"pnl":60.6},"2024-09":{"wins":0,"losses":2,"pnl":-20.9},"2024-10":{"wins":1,"losses":4,"pnl":-20.79},"2024-11":{"wins":2,"losses":1,"pnl":30.27},"2024-12":{"wins":1,"losses":2,"pnl":-0.31},"2025-01":{"wins":1,"losses":2,"pnl":-0.3},"2025-02":{"wins":2,"losses":1,"pnl":31.14},"2025-03":{"wins":2,"losses":3,"pnl":10.16},"2025-04":{"wins":1,"losses":1,"pnl":10.59},"2025-05":{"wins":1,"losses":5,"pnl":-32.7},"2025-06":{"wins":1,"losses":3,"pnl":-10.9},"2025-07":{"wins":3,"losses":1,"pnl":52.97},"2025-08":{"wins":1,"losses":2,"pnl":21.45},"2025-09":{"wins":1,"losses":2,"pnl":-0.33},"2025-10":{"wins":2,"losses":1,"pnl":33.62},"2025-11":{"wins":1,"losses":0,"pnl":42.89},"2025-12":{"wins":1,"losses":2,"pnl":-0.36},"2026-01":{"wins":1,"losses":2,"pnl":-0.36},"2026-02":{"wins":3,"losses":3,"pnl":35.51},"2026-03":{"wins":2,"losses":3,"pnl":11.68},"2026-04":{"wins":2,"losses":2,"pnl":24.51},"2026-05":{"wins":0,"losses":0,"pnl":8.97}}};
+const BT = {"XAUUSD":{"win_rate":39.7,"return_pct":14.1,"total_pnl":141.18,"max_drawdown":374.96,"sharpe":1.88,"profit_factor":1.28,"total_trades":73,"final_balance":1141.18,"equity":[1000.0,950.99,931.79,940.65,1008.01,1048.41,1090.45,1134.17,1179.63,1226.92,1238.57,1288.21,1225.08,1200.35,1176.11],"equity_dates":["06-07","08-07","09-17","10-09","11-20","01-16","03-07","04-18","05-29","07-28","09-23","11-05","01-16","02-23","04-09"]},"XAGUSD":{"win_rate":40.0,"return_pct":13.1,"total_pnl":130.81,"max_drawdown":173.67,"sharpe":2.12,"profit_factor":1.33,"total_trades":65,"final_balance":1130.81,"equity":[1000.0,1009.5,1049.98,1059.95,1038.54,1017.58,997.03,976.91,986.18,1025.72,1005.01,1045.31,1087.22,1130.81],"equity_dates":["06-07","08-23","10-08","12-12","01-31","03-28","06-25","08-14","10-17","11-19","01-16","02-02","03-23","05-14"]},"USOIL":{"win_rate":38.6,"return_pct":12.8,"total_pnl":128.2,"max_drawdown":256.77,"sharpe":1.79,"profit_factor":1.25,"total_trades":70,"final_balance":1128.2,"equity":[1000.0,1009.5,1049.95,1059.92,1069.99,1133.25,1110.36,1120.91,1131.55,1212.61,1188.13,1164.15,1210.81,1151.46,1128.2],"equity_dates":["06-07","07-10","09-10","11-19","12-27","03-07","04-08","05-26","07-17","09-03","10-22","11-28","12-26","02-23","04-30"]},"EURUSD":{"win_rate":30.0,"return_pct":-8.4,"total_pnl":-83.86,"max_drawdown":140.61,"sharpe":-1.24,"profit_factor":0.85,"total_trades":80,"final_balance":916.14,"equity":[1000.0,979.8,960.01,998.49,1038.5,1017.53,996.99,1006.46,986.14,966.24,975.41,984.68,964.8,945.32,926.23,963.35,916.14],"equity_dates":["06-07","07-24","10-16","11-21","01-14","02-10","04-02","04-30","05-23","06-20","07-31","09-23","12-02","01-12","02-13","03-24","05-05"]},"GBPUSD":{"win_rate":30.2,"return_pct":-8.4,"total_pnl":-84.39,"max_drawdown":188.15,"sharpe":-1.12,"profit_factor":0.86,"total_trades":86,"final_balance":915.61,"equity":[1000.0,1071.62,1081.79,1028.77,1038.54,987.63,997.02,1036.99,986.17,937.84,946.75,1014.55,994.06,1033.92,1043.73,992.57,943.92,924.86],"equity_dates":["06-07","07-29","10-15","11-29","01-21","02-14","04-15","06-26","07-18","08-06","09-25","10-17","11-25","12-19","01-23","02-19","03-11","05-12"]},"USDJPY":{"win_rate":24.3,"return_pct":-17.8,"total_pnl":-178.0,"max_drawdown":282.52,"sharpe":-3.46,"profit_factor":0.63,"total_trades":70,"final_balance":822.0,"equity":[1000.0,1009.5,1019.11,998.53,949.58,1017.6,967.73,920.3,875.2,832.31,791.51,775.54,806.63,814.28,822.0],"equity_dates":["06-07","07-26","09-17","10-24","12-03","01-07","02-21","05-13","07-18","08-19","09-26","11-07","01-21","03-12","05-12"]},"AUDUSD":{"win_rate":35.4,"return_pct":3.4,"total_pnl":33.89,"max_drawdown":100.24,"sharpe":0.57,"profit_factor":1.08,"total_trades":65,"final_balance":1033.89,"equity":[1000.0,1009.5,989.12,969.14,978.36,1048.42,1027.24,976.89,1046.83,1025.69,1035.43,1045.25,1055.19,1033.89],"equity_dates":["06-07","07-18","09-13","10-08","01-17","03-10","06-04","07-23","09-09","10-09","11-24","01-09","03-31","05-12"]},"USDCAD":{"win_rate":38.2,"return_pct":7.7,"total_pnl":76.99,"max_drawdown":148.23,"sharpe":1.54,"profit_factor":1.23,"total_trades":55,"final_balance":1076.99,"equity":[1000.0,1009.5,1019.08,1028.77,1007.99,1017.57,967.71,948.17,929.04,966.28,1005.02,1076.99],"equity_dates":["06-07","08-16","10-11","01-03","03-13","04-08","04-28","07-10","09-01","11-11","01-27","04-28"]},"USDCHF":{"win_rate":37.7,"return_pct":8.6,"total_pnl":86.28,"max_drawdown":182.47,"sharpe":1.31,"profit_factor":1.19,"total_trades":69,"final_balance":1086.28,"equity":[1000.0,979.8,960.02,998.5,978.34,1017.56,1027.24,1037.0,1078.59,1121.84,1099.19,1109.63,1087.23,1065.28],"equity_dates":["06-07","08-01","10-04","12-18","01-10","03-12","05-22","07-22","08-07","10-02","11-20","12-30","02-25","04-30"]},"EURJPY":{"win_rate":26.0,"return_pct":-15.3,"total_pnl":-153.34,"max_drawdown":193.74,"sharpe":-2.6,"profit_factor":0.71,"total_trades":73,"final_balance":846.66,"equity":[1000.0,1009.5,989.13,998.52,949.57,958.59,997.03,976.89,1016.05,995.53,975.44,955.74,964.83,917.54,872.58],"equity_dates":["06-07","08-16","09-19","11-27","01-01","01-30","03-20","04-17","06-06","07-10","08-29","11-19","12-30","03-04","04-08"]}};
 
-let liveData = [];
-let charts = {};
+let charts = {}, selectedInst = 'XAUUSD';
 
+// ---- Live tab ----
 async function loadLive() {
   try {
-    const res = await fetch('./paper_trades.json?t=' + Date.now());
+    const res = await fetch('./paper_trades.json?t='+Date.now());
     if (!res.ok) throw new Error('Cannot load paper_trades.json');
-    liveData = await res.json();
-    renderLive(liveData);
+    const T = await res.json();
+    renderLive(T);
   } catch(e) {
-    document.getElementById('trade-list').innerHTML = '<div style="color:#f87171;font-size:11px;font-family:var(--mono)">Error: ' + e.message + '</div>';
+    document.getElementById('trade-list').innerHTML='<div style="color:#f87171;font-size:11px;font-family:var(--mono)">'+e.message+'</div>';
   }
 }
 
+function sc(ibg,ic,bbg,bc,vc){return{ibg,ic,bbg,bc,vc}}
 function renderLive(T) {
   if (!T.length) return;
-  const exec = T.filter(t=>t.executed).length;
-  const rej = T.length - exec;
-  const avgConf = Math.round(T.reduce((a,t)=>a+t.confidence,0)/T.length);
-  const totalTok = T.reduce((a,t)=>a+(t.total_tokens||0),0);
-  const sellCount = T.filter(t=>t.signal==='SELL').length;
+  const exec=T.filter(t=>t.executed).length, rej=T.length-exec;
+  const avgConf=Math.round(T.reduce((a,t)=>a+t.confidence,0)/T.length);
+  const totalTok=T.reduce((a,t)=>a+(t.total_tokens||0),0);
+  const sellCount=T.filter(t=>t.signal==='SELL').length;
+  document.getElementById('mode-badge').textContent='● '+(T[T.length-1]?.mode||'paper').toUpperCase();
 
-  document.getElementById('mode-badge').textContent = '● ' + (T[T.length-1]?.mode||'paper').toUpperCase();
-
-  const stats = [
-    {icon:'⚡',label:'total runs',value:T.length,sub:'paper trade',ibg:'#1a1a2e',ic:'#6b7280',bbg:'#1e2229',bc:'#4b5563',badge:'today'},
-    {icon:'✓',label:'executed',value:exec,sub:'passed gate',ibg:'#052e16',ic:'#22c55e',bbg:'#052e16',bc:'#22c55e',badge:Math.round(exec/T.length*100)+'%',vc:'#22c55e'},
-    {icon:'✕',label:'rejected',value:rej,sub:'filtered',ibg:'#1f0707',ic:'#ef4444',bbg:'#1f0707',bc:'#ef4444',badge:Math.round(rej/T.length*100)+'%',vc:'#ef4444'},
-    {icon:'~',label:'avg conf',value:avgConf+'%',sub:'all runs',ibg:'#2a1f05',ic:'#f59e0b',bbg:'#2a1f05',bc:'#f59e0b',badge:'avg',vc:'#f59e0b'},
-    {icon:'#',label:'tokens',value:(totalTok/1000).toFixed(0)+'k',sub:'total used',ibg:'#0c1a2e',ic:'#3b82f6',bbg:'#0c1a2e',bc:'#3b82f6',badge:'~$'+(totalTok*0.000003).toFixed(4),vc:'#3b82f6'},
-    {icon:'↓',label:'top signal',value:'SELL',sub:sellCount+'/'+T.length+' runs',ibg:'#1a1a1a',ic:'#6b7280',bbg:'#1e2229',bc:'#4b5563',badge:sellCount+'/'+T.length},
+  const stats=[
+    {icon:'⚡',label:'total runs',value:T.length,sub:'paper trade',...sc('#1a1a2e','#6b7280','#1e2229','#4b5563'),badge:'today'},
+    {icon:'✓',label:'executed',value:exec,sub:'passed gate',...sc('#052e16','#22c55e','#052e16','#22c55e','#22c55e'),badge:Math.round(exec/T.length*100)+'%'},
+    {icon:'✕',label:'rejected',value:rej,sub:'filtered',...sc('#1f0707','#ef4444','#1f0707','#ef4444','#ef4444'),badge:Math.round(rej/T.length*100)+'%'},
+    {icon:'~',label:'avg conf',value:avgConf+'%',sub:'all runs',...sc('#2a1f05','#f59e0b','#2a1f05','#f59e0b','#f59e0b'),badge:'avg'},
+    {icon:'#',label:'tokens',value:(totalTok/1000).toFixed(0)+'k',sub:'used',...sc('#0c1a2e','#3b82f6','#0c1a2e','#3b82f6','#3b82f6'),badge:'~$'+(totalTok*0.000003).toFixed(4)},
+    {icon:'↓',label:'top signal',value:'SELL',sub:sellCount+'/'+T.length,...sc('#1a1a1a','#6b7280','#1e2229','#4b5563'),badge:sellCount+'/'+T.length},
   ];
-  document.getElementById('live-stats').innerHTML = stats.map(s=>`
-    <div class="stat-card">
-      <div class="stat-top">
-        <div class="stat-icon" style="background:${s.ibg};color:${s.ic};font-family:var(--mono)">${s.icon}</div>
-        <span class="stat-badge" style="background:${s.bbg};color:${s.bc}">${s.badge}</span>
-      </div>
-      <div class="stat-num" style="${s.vc?'color:'+s.vc:''}">${s.value}</div>
-      <div class="stat-label">${s.label}</div>
-      <div class="stat-divider"></div>
-      <div class="stat-foot">${s.sub}</div>
-    </div>`).join('');
+  document.getElementById('live-stats').innerHTML=stats.map(s=>`<div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:${s.ibg};color:${s.ic};font-family:var(--mono)">${s.icon}</div><span class="stat-badge" style="background:${s.bbg};color:${s.bc}">${s.badge}</span></div><div class="stat-num" style="${s.vc?'color:'+s.vc:''}">${s.value}</div><div class="stat-label">${s.label}</div><div class="stat-div"></div><div class="stat-foot">${s.sub}</div></div>`).join('');
 
-  document.getElementById('trade-list').innerHTML = [...T].reverse().map(t=>`
-    <div class="trade-item">
-      <div class="trade-top">
-        <div style="display:flex;align-items:center;gap:8px">
-          <span class="${t.signal==='BUY'?'signal-buy':'signal-sell'}">${t.signal}</span>
-          <span style="font-size:10px;color:var(--text-dim);font-family:var(--mono)">${(t.timestamp||'').slice(0,16)}</span>
-        </div>
-        <span class="pill ${t.executed?'pill-exec':'pill-rej'}">${t.executed?'✓ EXEC':'✗ REJ'}</span>
-      </div>
-      <div class="trade-details">
-        <span>entry<b>${(t.entry||0).toFixed(2)}</b></span>
-        <span>SL<b style="color:#ef4444">${t.sl||'—'}</b></span>
-        <span>TP<b style="color:#22c55e">${t.tp||'—'}</b></span>
-      </div>
-      <div class="conf-bar"><div class="conf-fill" style="width:${t.confidence||0}%"></div></div>
-      ${!t.executed&&t.rejection_reasons?.length?`<div class="rej-reason">${t.rejection_reasons[0]}</div>`:''}
-    </div>`).join('');
+  document.getElementById('trade-list').innerHTML=[...T].reverse().map(t=>`<div class="trade-item"><div class="ttop"><div style="display:flex;align-items:center;gap:8px"><span class="${t.signal==='BUY'?'buy':'sell'}">${t.signal}</span><span style="font-size:10px;color:var(--dim);font-family:var(--mono)">${(t.timestamp||'').slice(0,16)} ${t.instrument||''}</span></div><span class="pill ${t.executed?'p-exec':'p-rej'}">${t.executed?'✓ EXEC':'✗ REJ'}</span></div><div class="tdet"><span>entry<b>${(t.entry||0).toFixed(2)}</b></span><span>SL<b style="color:#ef4444">${t.sl||'—'}</b></span><span>TP<b style="color:#22c55e">${t.tp||'—'}</b></span></div><div class="cbar"><div class="cfill" style="width:${t.confidence||0}%"></div></div>${!t.executed&&t.rejection_reasons?.length?`<div class="rr">${t.rejection_reasons[0]}</div>`:''}</div>`).join('');
 
   if (charts.conf) charts.conf.destroy();
-  charts.conf = new Chart(document.getElementById('confChart'),{
-    type:'bar',
-    data:{labels:T.map((_,i)=>'#'+(i+1)),datasets:[{data:T.map(t=>t.confidence),backgroundColor:T.map(t=>t.executed?'#22c55e33':'#ef444433'),borderColor:T.map(t=>t.executed?'#22c55e':'#ef4444'),borderWidth:1,borderRadius:3}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:'#1e2229'},ticks:{color:'#4b5563',font:{family:'DM Mono',size:10}}},y:{min:0,max:100,grid:{color:'#1e2229'},ticks:{color:'#4b5563',font:{family:'DM Mono',size:10}}}}}
-  });
+  charts.conf=new Chart(document.getElementById('confChart'),{type:'bar',data:{labels:T.map((_,i)=>'#'+(i+1)),datasets:[{data:T.map(t=>t.confidence),backgroundColor:T.map(t=>t.executed?'#22c55e33':'#ef444433'),borderColor:T.map(t=>t.executed?'#22c55e':'#ef4444'),borderWidth:1,borderRadius:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:'#1e2229'},ticks:{color:'#4b5563',font:{family:'DM Mono',size:10}}},y:{min:0,max:100,grid:{color:'#1e2229'},ticks:{color:'#4b5563',font:{family:'DM Mono',size:10}}}}}});
 
-  const latest = T[T.length-1];
-  if (latest) {
-    document.getElementById('debate-list').innerHTML = [
-      ...(latest.bull_points||[]).map(p=>`<div class="debate-item"><div class="dot" style="background:#22c55e"></div><div style="color:#86efac">${p}</div></div>`),
-      ...(latest.bear_points||[]).map(p=>`<div class="debate-item"><div class="dot" style="background:#ef4444"></div><div style="color:#fca5a5">${p}</div></div>`)
-    ].join('')||'<div style="color:var(--text-dim);font-size:11px;font-family:var(--mono)">no data</div>';
+  const latest=T[T.length-1];
+  if(latest){
+    document.getElementById('debate-list').innerHTML=[...(latest.bull_points||[]).map(p=>`<div class="di"><div class="dot" style="background:#22c55e"></div><div style="color:#86efac">${p}</div></div>`),...(latest.bear_points||[]).map(p=>`<div class="di"><div class="dot" style="background:#ef4444"></div><div style="color:#fca5a5">${p}</div></div>`)].join('')||'<div style="color:var(--dim);font-size:11px;font-family:var(--mono)">no data</div>';
   }
-  document.getElementById('last-update').textContent = 'updated: ' + new Date().toLocaleString('th-TH');
+  document.getElementById('last-update').textContent='updated: '+new Date().toLocaleString('th-TH');
+}
+
+// ---- Backtest tab ----
+function renderBtComparison() {
+  const maxRet=Math.max(...Object.values(BT).map(b=>Math.abs(b.return_pct)));
+  document.getElementById('cmp-list').innerHTML=Object.entries(BT).sort((a,b)=>b[1].return_pct-a[1].return_pct).map(([sym,b])=>{
+    const isP=b.return_pct>=0;
+    const barW=Math.round(Math.abs(b.return_pct)/maxRet*100);
+    return `<div class="cmp-row"><div style="font-weight:500;color:${isP?'#22c55e':'#ef4444'}">${sym}</div><div><div class="ret-bar" style="width:${barW}%;background:${isP?'#22c55e':'#ef4444'};height:6px;border-radius:3px;margin-top:2px"></div><div style="font-size:9px;color:var(--dim);margin-top:2px">${b.total_trades} trades</div></div><div style="text-align:right;color:var(--dim)">${b.win_rate}%</div><div style="text-align:right;color:${b.sharpe>=1?'#22c55e':b.sharpe>=0?'#f59e0b':'#ef4444'}">${b.sharpe}</div><div style="text-align:right;color:${isP?'#22c55e':'#ef4444'}">${isP?'+':''}${b.return_pct}%</div></div>`;
+  }).join('');
+}
+
+function renderBtInstrument(sym) {
+  selectedInst=sym;
+  document.querySelectorAll('.inst-btn').forEach(b=>b.classList.toggle('active',b.dataset.sym===sym));
+  const b=BT[sym];
+  const isP=b.return_pct>=0;
+
+  const stats=[
+    {icon:'↑',label:'return',value:b.return_pct+'%',sub:'2 years',...sc(isP?'#052e16':'#1f0707',isP?'#22c55e':'#ef4444',isP?'#052e16':'#1f0707',isP?'#22c55e':'#ef4444',isP?'#22c55e':'#ef4444'),badge:isP?'profit':'loss'},
+    {icon:'%',label:'win rate',value:b.win_rate+'%',sub:b.total_trades+' trades',...sc('#2a1f05','#f59e0b','#2a1f05','#f59e0b','#f59e0b'),badge:'total'},
+    {icon:'$',label:'total P&L',value:'$'+b.total_pnl,sub:'from $1,000',...sc(isP?'#052e16':'#1f0707',isP?'#22c55e':'#ef4444',isP?'#052e16':'#1f0707',isP?'#22c55e':'#ef4444',isP?'#22c55e':'#ef4444'),badge:'net'},
+    {icon:'▼',label:'max drawdown',value:'$'+b.max_drawdown,sub:'worst dip',...sc('#1f0707','#ef4444','#1f0707','#ef4444','#ef4444'),badge:'dd'},
+    {icon:'~',label:'profit factor',value:b.profit_factor,sub:'> 1.0 = good',...sc('#0c1a2e','#3b82f6','#0c1a2e','#3b82f6','#3b82f6'),badge:'pf'},
+    {icon:'S',label:'sharpe',value:b.sharpe,sub:'> 1.0 = good',...sc('#1a1a2e','#6b7280','#1e2229','#4b5563'),badge:'sr'},
+  ];
+  document.getElementById('bt-stats').innerHTML=stats.map(s=>`<div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:${s.ibg};color:${s.ic};font-family:var(--mono)">${s.icon}</div><span class="stat-badge" style="background:${s.bbg};color:${s.bc}">${s.badge}</span></div><div class="stat-num" style="${s.vc?'color:'+s.vc:''}">${s.value}</div><div class="stat-label">${s.label}</div><div class="stat-div"></div><div class="stat-foot">${s.sub}</div></div>`).join('');
+
+  document.getElementById('bt-perf').innerHTML=[['total trades',b.total_trades],['win rate',b.win_rate+'%'],['profit factor',b.profit_factor],['final balance','$'+b.final_balance],['best scenario','+$'+(b.total_pnl>0?b.total_pnl:0)]].map(([k,v])=>`<div class="bt-row"><span style="color:var(--dim)">${k}</span><span style="font-weight:500">${v}</span></div>`).join('');
+  document.getElementById('bt-risk').innerHTML=[['max drawdown','$'+b.max_drawdown],['sharpe ratio',b.sharpe],['total P&L','$'+b.total_pnl],['return',b.return_pct+'%'],['status',isP?'✓ Profitable':'✗ Loss']].map(([k,v])=>`<div class="bt-row"><span style="color:var(--dim)">${k}</span><span style="font-weight:500;color:${k==='status'?(isP?'#22c55e':'#ef4444'):'var(--text)'}">${v}</span></div>`).join('');
+
+  if(charts.equity) charts.equity.destroy();
+  charts.equity=new Chart(document.getElementById('equityChart'),{type:'line',data:{labels:b.equity_dates,datasets:[{data:b.equity,borderColor:isP?'#f5c842':'#ef4444',borderWidth:1.5,pointRadius:0,fill:true,backgroundColor:isP?'rgba(245,200,66,0.05)':'rgba(239,68,68,0.05)',tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:'#1e2229'},ticks:{color:'#4b5563',font:{family:'DM Mono',size:9},maxTicksLimit:6}},y:{grid:{color:'#1e2229'},ticks:{color:'#4b5563',font:{family:'DM Mono',size:9},callback:v=>'$'+v}}}}});
 }
 
 function renderBacktest() {
-  const s = BACKTEST.summary;
-  const isProfit = s.total_pnl >= 0;
-
-  // Stats cards
-  const btstats = [
-    {icon:'↑',label:'return',value:s.return_pct+'%',sub:'2 years',ibg:'#052e16',ic:'#22c55e',bbg:'#052e16',bc:'#22c55e',badge:isProfit?'profit':'loss',vc:'#22c55e'},
-    {icon:'%',label:'win rate',value:s.win_rate+'%',sub:s.total_trades+' trades',ibg:'#2a1f05',ic:'#f59e0b',bbg:'#2a1f05',bc:'#f59e0b',badge:'total',vc:'#f59e0b'},
-    {icon:'$',label:'total P&L',value:'$'+s.total_pnl,sub:'from $'+s.account_start,ibg:isProfit?'#052e16':'#1f0707',ic:isProfit?'#22c55e':'#ef4444',bbg:isProfit?'#052e16':'#1f0707',bc:isProfit?'#22c55e':'#ef4444',badge:'net',vc:isProfit?'#22c55e':'#ef4444'},
-    {icon:'▼',label:'max drawdown',value:'$'+s.max_drawdown,sub:'worst dip',ibg:'#1f0707',ic:'#ef4444',bbg:'#1f0707',bc:'#ef4444',badge:'dd',vc:'#ef4444'},
-    {icon:'~',label:'profit factor',value:s.profit_factor,sub:'> 1.0 = good',ibg:'#0c1a2e',ic:'#3b82f6',bbg:'#0c1a2e',bc:'#3b82f6',badge:'pf',vc:'#3b82f6'},
-    {icon:'S',label:'sharpe ratio',value:s.sharpe_ratio,sub:'> 1.0 = good',ibg:'#1a1a2e',ic:'#6b7280',bbg:'#1e2229',bc:'#4b5563',badge:'sr'},
-  ];
-  document.getElementById('bt-stats').innerHTML = btstats.map(s2=>`
-    <div class="stat-card">
-      <div class="stat-top">
-        <div class="stat-icon" style="background:${s2.ibg};color:${s2.ic};font-family:var(--mono)">${s2.icon}</div>
-        <span class="stat-badge" style="background:${s2.bbg};color:${s2.bc}">${s2.badge}</span>
-      </div>
-      <div class="stat-num" style="${s2.vc?'color:'+s2.vc:''}">${s2.value}</div>
-      <div class="stat-label">${s2.label}</div>
-      <div class="stat-divider"></div>
-      <div class="stat-foot">${s2.sub}</div>
-    </div>`).join('');
-
-  // Performance table
-  document.getElementById('bt-perf').innerHTML = [
-    ['total trades', s.total_trades],
-    ['win rate', s.win_rate+'%'],
-    ['avg win', '$'+s.avg_win],
-    ['best trade', '$'+s.best_trade],
-    ['final balance', '$'+s.final_balance],
-  ].map(([k,v])=>`<div class="bt-row"><span style="color:var(--text-dim)">${k}</span><span style="font-weight:500">${v}</span></div>`).join('');
-
-  // Risk table
-  document.getElementById('bt-risk').innerHTML = [
-    ['max drawdown', '$'+s.max_drawdown],
-    ['profit factor', s.profit_factor],
-    ['sharpe ratio', s.sharpe_ratio],
-    ['avg loss', '$'+s.avg_loss],
-    ['worst trade', '$'+s.worst_trade],
-  ].map(([k,v])=>`<div class="bt-row"><span style="color:var(--text-dim)">${k}</span><span style="font-weight:500">${v}</span></div>`).join('');
-
-  // Equity curve chart
-  if (charts.equity) charts.equity.destroy();
-  charts.equity = new Chart(document.getElementById('equityChart'),{
-    type:'line',
-    data:{
-      labels: BACKTEST.equity_labels,
-      datasets:[{
-        data: BACKTEST.equity_values,
-        borderColor:'#f5c842',
-        borderWidth:1.5,
-        pointRadius:0,
-        fill:true,
-        backgroundColor:'rgba(245,200,66,0.05)',
-        tension:0.3,
-      }]
-    },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false}},
-      scales:{
-        x:{grid:{color:'#1e2229'},ticks:{color:'#4b5563',font:{family:'DM Mono',size:9},maxTicksLimit:8}},
-        y:{grid:{color:'#1e2229'},ticks:{color:'#4b5563',font:{family:'DM Mono',size:9},callback:v=>'$'+v}}
-      }
-    }
-  });
-
-  // Monthly P&L bars
-  const monthly = BACKTEST.monthly;
-  const maxPnl = Math.max(...Object.values(monthly).map(m=>Math.abs(m.pnl)));
-  document.getElementById('monthly-list').innerHTML = Object.entries(monthly).map(([month, m])=>`
-    <div class="monthly-bar">
-      <span style="min-width:56px;color:var(--text-dim)">${month.slice(2)}</span>
-      <div class="bar-wrap">
-        <div class="bar-fill" style="width:${Math.round(Math.abs(m.pnl)/maxPnl*100)}%;background:${m.pnl>=0?'#22c55e':'#ef4444'}"></div>
-      </div>
-      <span style="min-width:52px;text-align:right;color:${m.pnl>=0?'#22c55e':'#ef4444'}">${m.pnl>=0?'+':''}$${m.pnl.toFixed(0)}</span>
-      <span style="min-width:40px;text-align:right;color:var(--text-dim)">${m.wins}W ${m.losses}L</span>
-    </div>`).join('');
-
-  // Last 20 backtest trades
-  const BT_TRADES = [{"date":"2024-07-01","signal":"SELL","confidence":79,"entry":1819.76,"sl":1834.32,"tp":1790.64,"rr":2.0,"result":"WIN","pnl":20.0,"balance":1020.0},{"date":"2024-07-16","signal":"SELL","confidence":79,"entry":1813.16,"sl":1827.67,"tp":1784.15,"rr":2.0,"result":"LOSS","pnl":-10.2,"balance":1009.8},{"date":"2024-07-17","signal":"SELL","confidence":87,"entry":1821.4,"sl":1835.97,"tp":1792.26,"rr":2.0,"result":"LOSS","pnl":-10.1,"balance":999.7},{"date":"2024-07-18","signal":"SELL","confidence":87,"entry":1833.38,"sl":1848.08,"tp":1803.99,"rr":2.0,"result":"LOSS","pnl":-10.0,"balance":989.7},{"date":"2024-08-12","signal":"BUY","confidence":87,"entry":1921.46,"sl":1906.1,"tp":1952.22,"rr":2.0,"result":"WIN","pnl":19.8,"balance":1009.5},{"date":"2024-08-16","signal":"BUY","confidence":87,"entry":1936.04,"sl":1920.55,"tp":1967.04,"rr":2.0,"result":"WIN","pnl":20.2,"balance":1029.7},{"date":"2024-08-30","signal":"BUY","confidence":87,"entry":1945.42,"sl":1929.86,"tp":1976.55,"rr":2.0,"result":"WIN","pnl":20.6,"balance":1050.3},{"date":"2024-09-04","signal":"SELL","confidence":79,"entry":1983.19,"sl":1998.9,"tp":1951.58,"rr":2.0,"result":"LOSS","pnl":-10.5,"balance":1039.8},{"date":"2024-09-05","signal":"SELL","confidence":87,"entry":1997.5,"sl":2013.47,"tp":1965.57,"rr":2.0,"result":"LOSS","pnl":-10.4,"balance":1029.4},{"date":"2024-10-03","signal":"BUY","confidence":87,"entry":1904.8,"sl":1889.54,"tp":1935.33,"rr":2.0,"result":"WIN","pnl":20.58,"balance":1049.98}];
-  document.getElementById('bt-trades').innerHTML = BT_TRADES.map(t=>`
-    <div class="trade-item">
-      <div class="trade-top">
-        <div style="display:flex;align-items:center;gap:8px">
-          <span class="${t.signal==='BUY'?'signal-buy':'signal-sell'}">${t.signal}</span>
-          <span style="font-size:10px;color:var(--text-dim);font-family:var(--mono)">${t.date}</span>
-        </div>
-        <span class="pill ${t.result==='WIN'?'pill-win':t.result==='LOSS'?'pill-loss':'pill-timeout'}">${t.result==='WIN'?'✓ WIN':t.result==='LOSS'?'✗ LOSS':'— TIME'}</span>
-      </div>
-      <div class="trade-details">
-        <span>entry<b>${t.entry.toFixed(2)}</b></span>
-        <span>P&L<b style="color:${t.pnl>=0?'#22c55e':'#ef4444'}">${t.pnl>=0?'+':''}$${t.pnl.toFixed(2)}</b></span>
-        <span>balance<b>$${t.balance.toFixed(0)}</b></span>
-      </div>
-    </div>`).join('');
+  renderBtComparison();
+  // Instrument buttons
+  document.getElementById('inst-btns').innerHTML=Object.keys(BT).map(sym=>{
+    const isP=BT[sym].return_pct>=0;
+    return `<button class="inst-btn ${isP?'profit':'loss'} ${sym===selectedInst?'active':''}" data-sym="${sym}" onclick="renderBtInstrument('${sym}')">${sym}<div style="font-size:9px;margin-top:2px;color:${isP?'#22c55e':'#ef4444'}">${isP?'+':''}${BT[sym].return_pct}%</div></button>`;
+  }).join('');
+  renderBtInstrument(selectedInst);
 }
 
 function switchTab(tab) {
-  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active', (i===0&&tab==='live')||(i===1&&tab==='backtest')));
-  document.getElementById('tab-live').classList.toggle('section-hidden', tab!=='live');
-  document.getElementById('tab-backtest').classList.toggle('section-hidden', tab!=='backtest');
-  if (tab==='backtest') renderBacktest();
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',(i===0&&tab==='live')||(i===1&&tab==='backtest')));
+  document.getElementById('tab-live').classList.toggle('hidden',tab!=='live');
+  document.getElementById('tab-backtest').classList.toggle('hidden',tab!=='backtest');
+  if(tab==='backtest') renderBacktest();
 }
 
 loadLive();
-setInterval(loadLive, 5*60*1000);
+setInterval(loadLive,5*60*1000);
 </script>
 </body>
 </html>
